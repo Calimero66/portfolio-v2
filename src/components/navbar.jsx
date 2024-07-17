@@ -1,8 +1,11 @@
 import React from 'react'
-import { socialLinks, navLinks, socialLinksMobile } from '../data/nav-data'
+import { socialLinks, navLinks, socialLinksMobile, navLinksMobile } from '../data/nav-data'
 // import { Link } from 'react-router-dom'
 import logo from '../images/download.png'
+
 import { FaBarsStaggered } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
+
 import { useState } from 'react';
 
 
@@ -16,11 +19,8 @@ const NavBar = () => {
     return (
 
         <div className="flex min-h-screen bg-black text-white pl-3 ">
-            {/* <aside className="flex flex-col items-center justify-between w-10 py-8 mx-6 pl-10"> */}
             <aside className="flex flex-col items-center justify-between w-24 py-8 mx-6 pl-2  ">
-                {/* <div className='fixed  md:hidden lg:hidden'>
-                    <FaBarsStaggered className="w-6 h-6 text-white cursor-pointer " />
-                </div> */}
+
                 <div className='flex'>
                     <img src={logo} alt="Logo" className="" />
 
@@ -35,7 +35,7 @@ const NavBar = () => {
                         <ul className='space-y-20' >
                             {navLinks.map((link, index) => (
                                 <>
-                                    <li key={index} spy={true} smooth={true} className="-rotate-90 text-5xl items-center hover:text-red-600 " >
+                                    <li key={index} spy={true} smooth={true} className="-rotate-90 text-lg items-center hover:text-red-600 " >
                                         <a to={link.pathname}>{link.label}
                                         </a>
                                     </li>
@@ -64,22 +64,28 @@ const NavBar = () => {
 
                 {/* navbar for mobile */}
 
-                <div className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-zinc-800 flex flex-col justify-center items-center'} >
+                <div className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-zinc-800 flex justify-center items-center'} >
+                    <div onClick={handelClick} className='fixed items-center  top-16 '>
+                        <IoClose  className="w-10 h-10 text-white cursor-pointer rounded-full border-b-gray-50 " />
+                    </div>
+                    <div className='w-full justify-center items-center mx-auto'>
+                        <ul className='flex flex-col w-full space-y-10  justify-center'>
+                            {/* <XIcon className="w-6 h-6" /> */}
+                            {navLinksMobile.map((link, index) => (
+                                <>
+                                    <li key={index} spy={true} smooth={true} className="mx-auto w-full text-center  space-x-6 text-3xl cursor-pointer  " >
+                                        <a to={link.pathname}>{link.label}
+                                        </a>
+                                        {/* <div className=' border border-red-800 '></div> */}
+                                    </li>
 
-                    <ul className='space-y-6 fixed  '>
-                        {/* <XIcon className="w-6 h-6" /> */}
-                        {navLinks.map((link, index) => (
-                            <>
-                                <li key={index} spy={true} smooth={true} className=" text-3xl items-center hover:text-red-600 cursor-pointer " >
-                                    <a to={link.pathname}>{link.label}
-                                    </a>
-                                </li>
+                                </>
 
-                            </>
-
-                        ))}
-                    </ul>
-                    <ul className='flex space-x-10 pt-96 '>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <ul className='flex flex-row absolute space-x-10 bottom-6 left-10 '>
                             {/* <XIcon className="w-6 h-6" /> */}
                             {socialLinksMobile.map((link, index) => (
                                 <li key={index}  >
@@ -89,6 +95,8 @@ const NavBar = () => {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+
 
                 </div>
 
