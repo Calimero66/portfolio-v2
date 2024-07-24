@@ -5,15 +5,14 @@ function App() {
 
   return (
     <>
-    {/* <div className="z-50 h-full w-full bg-slate-950">
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      {/* <div class="absolute top-0 z-[-2] h-screen w-screen bg-[#00091d] bg-[radial-gradient(#808080_1px,#000000_1px)] bg-[size:20px_20px]">
+      </div> */}
+      <div class="absolute top-0 -z-10 h-full w-full bg-black">
+        <div class="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[rgba(244,109,109,0.5)] opacity-50 blur-[80px]"></div>
+      </div>
+      <NavBar />
 
-    </div> */}
-    <NavBar />
-      
-    
-  
-    
+
     </>
   )
 }

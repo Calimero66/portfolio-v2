@@ -28,6 +28,7 @@ export const navLinks = [
         pathname: '/contact',
     },
 ];
+
 export const navLinksMobile = [
     {
         label: 'Projects',
