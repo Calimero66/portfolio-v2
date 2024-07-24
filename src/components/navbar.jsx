@@ -56,16 +56,11 @@ const NavBar = () => {
                 </div>
                 <div className="lg:flex lg:flex-col lg:flex-1 md:flex md:flex-col md:flex-1 pt-20 hidden cursor-pointer">
 
-                    {/* <div className="lg:flex lg:flex-col lg:flex-1 md:flex md:flex-col md:flex-1 pt-20 hidden cursor-pointer"
-                    onMouseEnter={()=>handleHover()} 
-                    onMouseLeave={()=>handleHoverExit()} 
-                > */}
-
-                    <nav className="lg:flex "
+                    <nav className="lg:flex  "
                         onMouseEnter={() => handleHover()}
                         onMouseLeave={() => handleHoverExit()}
                     >
-                        <ul className='space-y-20' >
+                        <ul className='space-y-20 mx-auto' >
 
                             {navLinks.map((link, index) => (
                                 <React.Fragment key={index}>
@@ -78,7 +73,7 @@ const NavBar = () => {
                 </div>
                 <div className=" z-50 lg:flex lg:flex-col md:flex md:flex-col hidden " >
                     <nav className="lg:flex mx-auto ">
-                        <ul className='space-y-6 pb-6  '>
+                        <ul className='space-y-6 pb-6 mr-[25.5px]  '>
                             {/* <XIcon className="w-6 h-6" /> */}
                             {socialLinks.map((link, index) => (
                                 <li key={index} >
@@ -95,21 +90,15 @@ const NavBar = () => {
 
                 <div className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-full h-screen backdrop-blur-sm flex justify-center items-center'} >
                     <div onClick={handelClick} className='fixed right-[40px]  top-9 '>
-                        <IoClose className="w-10 h-10 text-white cursor-pointer rounded-full bg-red-600 " />
+                        <IoClose className="w-10 h-10 text-white cursor-pointer rounded-full" />
                     </div>
                     <div className=' justify-center items-center mx-auto'>
                         <ul className='flex flex-col w-full space-y-10  justify-center'>
 
-                            {navLinksMobile.map((link, index) => (
-                                <>
-                                    <li key={index} spy={true} smooth={true} className="group space-x-6 text-3xl cursor-pointer " >
-                                        <a to={link.pathname}>{link.label}
-                                        </a>
-                                        <div className=""></div>
-                                    </li>
-
-                                </>
-
+                        {navLinks.map((link, index) => (
+                                <React.Fragment key={index}className="group space-x-6 text-3xl cursor-pointer">
+                                    <NavLink link={link} />
+                                </React.Fragment>
                             ))}
                         </ul>
                     </div>
@@ -150,7 +139,7 @@ function NavLink({ link }) {
     };
 
     return (
-        <li className="-rotate-90 overflow-hidden">
+        <li className="lg:-rotate-90 overflow-hidden">
             <a
                 href={link.pathname}
                 onMouseEnter={handleMouseEnter}
@@ -170,12 +159,5 @@ function NavLink({ link }) {
         </li>
     );
 }
-{/* <div className="relative mt-1 h-1 w-full bottom-4">
-    <div
-        className={`absolute left-0 top-0 h-full w-full bg-yellow-500 transition-transform duration-100 ${isHoveredIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'} `}
-    ></div>
-    <div
-        className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-yellow-500 opacity-0 transition-transform duration-300 ${isHoveredOut && 'translate-x-full opacity-100'}`}
-    ></div>
-</div> */}
+
 export default NavBar
