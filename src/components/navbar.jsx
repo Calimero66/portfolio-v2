@@ -61,39 +61,16 @@ const NavBar = () => {
                     onMouseLeave={()=>handleHoverExit()} 
                 > */}
 
-                    <nav className="lg:flex "  
+                    <nav className="lg:flex "
                         onMouseEnter={() => handleHover()}
                         onMouseLeave={() => handleHoverExit()}
                     >
                         <ul className='space-y-20' >
+
                             {navLinks.map((link, index) => (
-                                <>
-                                    <li key={index} spy={true} smooth={true} className="-rotate-90 " >
-                                        <a to={link.pathname}
-                                            className="">
-                                            {link.label}
-                                            <div className="relative mt-1 h-1 w-full bottom-4">
-                                                <div
-                                                    className={`absolute left-0 top-0 h-full w-full bg-yellow-500 transition-transform duration-100 ${isHoveredIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'} `}
-                                                ></div>
-                                                <div
-                                                    className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-yellow-500 opacity-0 transition-transform duration-300 ${isHoveredOut && 'translate-x-full opacity-100'}`}
-                                                ></div>
-                                            </div>
-                                        </a>
-                                        {/* <div className="relative mt-1 h-1 w-full">
-                                            <div
-                                                className={`absolute left-0 top-0 h-full w-full bg-yellow-500 transition-transform duration-300 ${isHoveredIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
-                                            ></div>
-                                            <div
-                                                className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-yellow-500 opacity-0 transition-transform duration-300 ${isHoveredOut ? 'translate-x-full opacity-100' : ''}`}
-                                            ></div>
-                                        </div> */}
-
-
-                                    </li>
-
-                                </>
+                                <React.Fragment key={index}>
+                                    <NavLink link={link} />
+                                </React.Fragment>
                             ))}
                         </ul>
                     </nav>
@@ -158,5 +135,47 @@ const NavBar = () => {
 
     )
 }
+function NavLink({ link }) {
+    const [isHoveredIn, setIsHoveredIn] = useState(false);
+    const [isHoveredOut, setIsHoveredOut] = useState(false);
 
+    const handleMouseEnter = () => {
+        setIsHoveredIn(true);
+        setIsHoveredOut(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHoveredIn(false);
+        setIsHoveredOut(true);
+    };
+
+    return (
+        <li className="-rotate-90 overflow-hidden">
+            <a
+                href={link.pathname}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="relative mx-3"
+            >
+                {link.label}
+                <div className="relative mt-1 h-1 w-full bottom-4">
+                    <div
+                        className={`absolute left-0 top-0 h-full w-full bg-red-900 transition-transform duration-300 ${isHoveredIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+                    ></div>
+                    <div
+                        className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-red-900 opacity-0 transition-transform duration-300 ${isHoveredOut && 'translate-x-full opacity-100' }`}
+                    ></div>
+                </div>
+            </a>
+        </li>
+    );
+}
+{/* <div className="relative mt-1 h-1 w-full bottom-4">
+    <div
+        className={`absolute left-0 top-0 h-full w-full bg-yellow-500 transition-transform duration-100 ${isHoveredIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'} `}
+    ></div>
+    <div
+        className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-yellow-500 opacity-0 transition-transform duration-300 ${isHoveredOut && 'translate-x-full opacity-100'}`}
+    ></div>
+</div> */}
 export default NavBar
