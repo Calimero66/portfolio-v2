@@ -42,13 +42,13 @@ const NavBar = () => {
     return (
 
         <div className="flex min-h-screen  text-white pl-3 z-10">
-            <aside className="flex flex-col items-center justify-between w-24 py-8 mx-6 pl-2  ">
+            <aside className="flex flex-col items-center justify-between w-24 py-8 mx-[-8px] pl-2 sm:mx-6  ">
 
                 <div className='flex'>
-                    <img src={logo} alt="Logo" className="cursor-pointer" />
+                    <img src={logo} alt="Logo" className="cursor-pointer sm: " />
 
                     {/* navbar for mobile */}
-                    <div onClick={handelClick} className='fixed items-end right-0 pr-12 pt-[13px] md:hidden lg:hidden'>
+                    <div onClick={handelClick} className='fixed items-end right-0 pr-6 pt-[13px] md:hidden lg:hidden'>
                         <FaBarsStaggered className="w-6 h-6 text-red-500 cursor-pointer " />
                     </div>
                     {/* End nav bar */}
@@ -139,7 +139,7 @@ function NavLink({ link }) {
     };
 
     return (
-        <li className="lg:-rotate-90 overflow-hidden">
+        <li className="lg:-rotate-90 2xl:-rotate-90 xl:-rotate-90 md:-rotate-90 overflow-hidden">
             <a
                 href={link.pathname}
                 onMouseEnter={handleMouseEnter}

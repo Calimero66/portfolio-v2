@@ -6,7 +6,7 @@ const icon = {
     
 };
 const icon2 = {
-    className: "w-8 h-8 hover:text-red-600  ",
+    className: "w-7 h-7 hover:text-red-600  ",
     
 };
 
