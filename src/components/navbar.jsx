@@ -47,7 +47,7 @@ const NavBar = () => {
                 <aside className="flex flex-col items-center justify-between w-24 py-8 mx-[-8px] pl-2 sm:mx-6  ">
 
                     <div className='flex'>
-                        <img src={logo} alt="Logo" className="cursor-pointer sm: " />
+                        <img src={logo} alt="Logo" className="cursor-pointer " />
 
                         {/* navbar for mobile */}
                         <div onClick={handelClick} className='fixed items-end right-0 pr-6 pt-[13px] md:hidden lg:hidden'>
@@ -79,7 +79,7 @@ const NavBar = () => {
                                 {/* <XIcon className="w-6 h-6" /> */}
                                 {socialLinks.map((link, index) => (
                                     <li key={index} >
-                                        <a href={link.url} target="_blank" rel="noopener noreferrer" className=' cursor-pointer'  >
+                                        <a href={link.url} target="_blank" rel="noopener noreferrer" className=' cursor-pointer '  >
                                             {link.icon}
                                         </a>
                                     </li>

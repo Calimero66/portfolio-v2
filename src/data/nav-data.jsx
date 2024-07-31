@@ -2,7 +2,7 @@ import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 
 const icon = {
-    className: "w-5 h-5 hover:text-red-600  ",
+    className: "w-5 h-5 hover:text-red-600   ",
     
 };
 const icon2 = {
