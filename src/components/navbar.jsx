@@ -1,13 +1,12 @@
 import React from 'react'
 import { socialLinks, navLinks, socialLinksMobile, navLinksMobile } from '../data/nav-data'
-// import { Link } from 'react-router-dom'
+
 import logo from '../images/download.png'
 
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 
 import { useState, useEffect } from 'react';
-import Intro from './intro';
 
 
 
@@ -43,19 +42,18 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="flex min-h-screen  text-white pl-3 z-10">
-                <aside className="flex flex-col items-center justify-between w-24 py-8 mx-[-8px] pl-2 sm:mx-6  ">
+            <div className=" absolute flex flex-col text-white pl-3 z-10">
+                <div className='flex'>
+                            <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-7 ml-3 " />
 
-                    <div className='flex'>
-                        <img src={logo} alt="Logo" className="cursor-pointer " />
+                            {/* navbar for mobile */}
+                            <div onClick={handelClick} className='fixed items-end right-0 pt-[13px] md:hidden lg:hidden m-6'>
+                                <FaBarsStaggered className="w-6 h-6 text-red-500 cursor-pointer " />
+                            </div>
+                            {/* End nav bar */}
+                </div>
 
-                        {/* navbar for mobile */}
-                        <div onClick={handelClick} className='fixed items-end right-0 pr-6 pt-[13px] md:hidden lg:hidden'>
-                            <FaBarsStaggered className="w-6 h-6 text-red-500 cursor-pointer " />
-                        </div>
-                        {/* End nav bar */}
-
-                    </div>
+                <aside className="flex flex-col items-center justify-between w-24 py-8 mx-[-8px] pl-2 sm:mx-6 h-screen  ">
                     <div className="lg:flex lg:flex-col lg:flex-1 md:flex md:flex-col md:flex-1 pt-20 hidden cursor-pointer">
 
                         <nav className="lg:flex  "
@@ -90,15 +88,15 @@ const NavBar = () => {
 
                     {/* navbar for mobile */}
 
-                    <div className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-full h-screen backdrop-blur-sm flex justify-center items-center'} >
+                    <div className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center'} >
                         <div onClick={handelClick} className='fixed right-[40px]  top-9 '>
                             <IoClose className="w-10 h-10 text-white cursor-pointer rounded-full" />
                         </div>
                         <div className=' justify-center items-center mx-auto'>
-                            <ul className='flex flex-col w-full space-y-10  justify-center'>
+                            <ul className='flex flex-col w-full justify-center'>
 
                             {navLinks.map((link, index) => (
-                                    <React.Fragment key={index}className="group space-x-6 text-3xl cursor-pointer">
+                                    <React.Fragment key={index}className="group text-3xl cursor-pointer">
                                         <NavLink link={link} />
                                     </React.Fragment>
                                 ))}
@@ -122,10 +120,13 @@ const NavBar = () => {
                     {/* End nav bar */}
 
                 </aside>
-                
-                {/* <Intro /> */}
-
             </div>
+            {!isOpen && (
+                <div className='border-2 bottom-[40px] sm:bottom-[40px] md:bottom-[50px] lg:bottom-[60px] border-[#ffffff] rounded-full h-10 w-4 z-10 absolute left-0 mx-auto right-[0px] before:content before:block before:h-[8px] before:w-[10px] before:bg-white before:rounded-full before:top-[10px] before:animate-scrollDownAnimation'>
+                    <br />
+                    <div className='mt-4 ml-[-14px] text-white'>Scroll</div>
+                </div>
+            )}
         </>
 
 
