@@ -42,7 +42,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className=" absolute flex flex-col text-white pl-3 z-10">
+            <div className="fixed flex flex-col text-white pl-3 z-10 ">
                 <div className='flex'>
                             <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-7 ml-3 " />
 
@@ -121,12 +121,12 @@ const NavBar = () => {
 
                 </aside>
             </div>
-            {!isOpen && (
+            {/* {!isOpen && (
                 <div className='border-2 bottom-[40px] sm:bottom-[40px] md:bottom-[50px] lg:bottom-[60px] border-[#ffffff] rounded-full h-10 w-4 z-10 absolute left-0 mx-auto right-[0px] before:content before:block before:h-[8px] before:w-[10px] before:bg-white before:rounded-full before:top-[10px] before:animate-scrollDownAnimation'>
                     <br />
                     <div className='mt-4 ml-[-14px] text-white'>Scroll</div>
                 </div>
-            )}
+            )} */}
         </>
 
 
