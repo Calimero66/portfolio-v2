@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 
 
 
-const NavBar = () => {
+const Nav = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const handelClick = () => {
@@ -39,28 +39,27 @@ const NavBar = () => {
         }
     }, [isHoveredOut]);
 
+    const handleCombinedClick = () => {
+        handelClick();
+        toggleNavbar();
+    };
+
 
     return (
         <>
-            <div className="fixed flex flex-col text-white pl-3 z-10 ">
+            <div className="fixed ">
                 <div className='flex'>
-                            <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-7 ml-3 " />
-
-                            {/* navbar for mobile */}
-                            <div onClick={handelClick} className='fixed items-end right-0 pt-[13px] md:hidden lg:hidden m-6'>
-                                <FaBarsStaggered className="w-6 h-6 text-red-500 cursor-pointer " />
-                            </div>
-                            {/* End nav bar */}
+                    <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-12 ml-6 " />
                 </div>
 
-                <aside className="flex flex-col items-center justify-between w-24 py-8 mx-[-8px] pl-2 sm:mx-6 h-screen  ">
+                <aside className="lg:flex lg:flex-col lg:flex-1 md:flex md:flex-col lg:items-center lg:justify-between md:items-center md:justify-center w-24 py-8 mx-[-8px] pl-2 sm:mx-6 h-screen hidden  ">
                     <div className="lg:flex lg:flex-col lg:flex-1 md:flex md:flex-col md:flex-1 pt-20 hidden cursor-pointer">
 
                         <nav className="lg:flex  "
                             onMouseEnter={() => handleHover()}
                             onMouseLeave={() => handleHoverExit()}
                         >
-                            <ul className='space-y-20 mx-auto' >
+                            <ul className='space-y-14 mx-auto pt-10' >
 
                                 {navLinks.map((link, index) => (
                                     <React.Fragment key={index}>
@@ -85,48 +84,47 @@ const NavBar = () => {
                             </ul>
                         </nav>
                     </div>
-
-                    {/* navbar for mobile */}
-
-                    <div className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center'} >
-                        <div onClick={handelClick} className='fixed right-[40px]  top-9 '>
-                            <IoClose className="w-10 h-10 text-white cursor-pointer rounded-full" />
-                        </div>
-                        <div className=' justify-center items-center mx-auto'>
-                            <ul className='flex flex-col w-full justify-center'>
-
-                            {navLinks.map((link, index) => (
-                                    <React.Fragment key={index}className="group text-3xl cursor-pointer">
-                                        <NavLink link={link} />
-                                    </React.Fragment>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <ul className='flex flex-row absolute space-x-10 bottom-6 left-10 '>
-
-                                {socialLinksMobile.map((link, index) => (
-                                    <li key={index}  >
-                                        <a href={link.url} target="_blank" rel="noopener noreferrer" className=' cursor-pointer '  >
-                                            {link.icon}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    {/* End nav bar */}
-
                 </aside>
-            </div>
-            {/* {!isOpen && (
-                <div className='border-2 bottom-[40px] sm:bottom-[40px] md:bottom-[50px] lg:bottom-[60px] border-[#ffffff] rounded-full h-10 w-4 z-10 absolute left-0 mx-auto right-[0px] before:content before:block before:h-[8px] before:w-[10px] before:bg-white before:rounded-full before:top-[10px] before:animate-scrollDownAnimation'>
-                    <br />
-                    <div className='mt-4 ml-[-14px] text-white'>Scroll</div>
+                {/* navbar for mobile */}
+
+                <div>
+                    {!isOpen ? (
+                        <div onClick={handleCombinedClick} className='fixed items-end right-[28px] top-[30px] md:hidden lg:hidden m-6 pt-2'>
+                            <FaBarsStaggered className="w-7 h-7 text-red-500 cursor-pointer" />
+                        </div>
+                    ) : (
+                        <>
+                            <div className='absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center'>
+                                <div onClick={handelClick} className='fixed right-[46px] top-[55px]'>
+                                    <IoClose className="w-10 h-10 text-red-500 cursor-pointer rounded-full" />
+                                </div>
+                                <div className='justify-center items-center mx-auto'>
+                                    <ul className='flex flex-col w-full justify-center'>
+                                        {navLinks.map((link, index) => (
+                                            <React.Fragment key={index} className="group text-3xl cursor-pointer">
+                                                <NavLink link={link} />
+                                            </React.Fragment>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="absolute bottom-0 left-0 flex flex-row mb-3 ml-3  ">
+                                    <ul className='flex flex-row'>
+                                        {socialLinksMobile.map((link, index) => (
+                                            <li key={index} className='mr-8'>
+                                                <a href={link.url} target="_blank" rel="noopener noreferrer" className='cursor-pointer'>
+                                                    {link.icon}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </>
+                    )}
                 </div>
-            )} */}
+
+                {/* End nav bar */}
+            </div>
         </>
 
 
@@ -160,7 +158,7 @@ function NavLink({ link }) {
                         className={`absolute left-0 top-0 h-full w-full bg-red-900 transition-transform duration-300 ${isHoveredIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
                     ></div>
                     <div
-                        className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-red-900 opacity-0 transition-transform duration-300 ${isHoveredOut && 'translate-x-full opacity-100' }`}
+                        className={`absolute left-0 top-0 h-full w-full translate-x-0 transform bg-red-900 opacity-0 transition-transform duration-300 ${isHoveredOut && 'translate-x-full opacity-100'}`}
                     ></div>
                 </div>
             </a>
@@ -168,4 +166,4 @@ function NavLink({ link }) {
     );
 }
 
-export default NavBar
+export default Nav
