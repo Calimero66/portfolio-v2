@@ -1,7 +1,8 @@
 import React from 'react'
 import Nav from './components/Nav'
 import Intro from './components/intro'
-import Details from './components/Details'
+// import Details from './components/Details'
+import Home from './components/Skills'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Nav />
         <div className="flex-1 lg:ml-44 md:ml-44" >
           <Intro />
-          <Details/>
+          {/* <Details/> */}
+          <Home/>
 
         </div>
       </div>

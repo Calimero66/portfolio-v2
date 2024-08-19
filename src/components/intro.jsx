@@ -22,10 +22,10 @@ const Intro = () => {
                         {aboutMe.description}
                     </p>
                     
-                        <div className=' border-2 bottom-[2cm] border-[#ffffff] rounded-full h-10 w-4 z-10 absolute inset-x-0 mx-auto before:content before:block before:h-[8px] before:w-[10px] before:bg-white before:rounded-full before:top-[10px] before:animate-scrollDownAnimation'>
+                        {/* <div className=' border-2 bottom-[2cm] border-[#ffffff] rounded-full h-10 w-4 z-10 absolute inset-x-0 mx-auto before:content before:block before:h-[8px] before:w-[10px] before:bg-white before:rounded-full before:top-[10px] before:animate-scrollDownAnimation'>
                             <br />
                             <div className='mt-4 ml-[-14px] text-white'>Scroll</div>
-                        </div>
+                        </div> */}
                     
                 </div>
             </div>
