@@ -42,7 +42,7 @@ export function IconCloudWrapper() {
 
     return (
 
-        <div className="flex h-full w-full max-w-[32rem] lg:max-w-[50rem] items-center justify-center px-20 pb-20 pt-8 mx-auto my-auto">
+        <div className="flex h-full w-full items-center justify-center px-20 pb-20 pt-8 mx-auto my-auto">
             
             {data ? <IconCloud iconSlugs={data} /> : <p>Loading...</p>}
         </div>

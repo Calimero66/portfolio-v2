@@ -3,12 +3,12 @@ import { IconCloudWrapper } from './ui/IconCloudWrapper';
 
 function ParentComponent() {
     return (
-        <div className='lg:mr-[10rem] md:mr-80  sm:mr-72'>
+        <div className='flex flex-col mx-auto h-screen'>
             {/* Other components and logic */}
             <h3 className=' text-center text-5xl justify-center font-light  '>
                 My Skills
+                <IconCloudWrapper />
             </h3>
-            <IconCloudWrapper />
         </div>
     );
 }
