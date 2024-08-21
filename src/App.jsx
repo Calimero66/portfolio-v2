@@ -18,7 +18,7 @@ function App() {
       </div>
       <div className="flex h-max">
         <Nav />
-        <div className="flex-1 lg:ml-44 md:ml-44" >
+        <div className="flex-1 lg:ml-36 md:ml-36" >
           <Intro />
           {/* <Details/> */}
           <Home/>

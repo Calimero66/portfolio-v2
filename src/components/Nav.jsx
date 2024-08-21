@@ -47,8 +47,8 @@ const Nav = () => {
 
     return (
         <>
-            <div className="fixed ">
-                <div className='flex'>
+            <div className="fixed w-28 ">
+                <div className='flex w-28'>
                     <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-12 ml-6 " />
                 </div>
 
