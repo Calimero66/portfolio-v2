@@ -89,12 +89,12 @@ const Nav = () => {
 
                 <div>
                     {!isOpen ? (
-                        <div onClick={handleCombinedClick} className='fixed items-end right-[28px] top-[30px] md:hidden lg:hidden m-6 pt-2'>
+                        <div onClick={handleCombinedClick} className='fixed items-end right-[28px] top-[30px] md:hidden lg:hidden m-6 pt-2 z-50'>
                             <FaBarsStaggered className="w-7 h-7 text-red-500 cursor-pointer" />
                         </div>
                     ) : (
                         <>
-                            <div className='absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center'>
+                            <div className='absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center z-50'>
                                 <div onClick={handelClick} className='fixed right-[46px] top-[55px]'>
                                     <IoClose className="w-10 h-10 text-red-500 cursor-pointer rounded-full" />
                                 </div>
