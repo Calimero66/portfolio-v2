@@ -7,7 +7,7 @@ import GradualSpacing from "@/components/magicui/gradual-spacing";
 const Intro = () => {
     return (
         <>
-            <div className='flex flex-col mx-auto h-screen p-4 '>
+            <div className='flex flex-col mx-auto h-screen p-4 ' id='intro'>
                 <div className=' mx-auto my-auto  '>
                     <div className='flex flex-row text-secondary text-[#a1a1aa]'>
                         <div className="w-4 border-t border-[#6B7280] bottom-[-12px] relative"></div>
@@ -18,8 +18,7 @@ const Intro = () => {
                         from-red-400 via-[#262626] to-[#a1a1aa] bg-clip-text tracking-tight text-transparent'>{aboutMe.aka}</span>
                     </p>
                     <GradualSpacing
-                        className="font-display text-4xl font-bold bg-gradient-to-r
-                        from-[#e5e5e5] via-[#737373] to-[#27272a] bg-clip-text tracking-tight text-transparent  md:text-5xl md:leading-[4rem]"
+                        className="font-display text-4xl font-bold text-[##e5e7eb] tracking-tight  md:text-5xl md:leading-[4rem]"
                         text={aboutMe.title}
                     />
                     <p className='tracking-tight my-6 max-w-xl font-light'>

@@ -10,11 +10,11 @@ import {
 
 const Projects = () => {
     return (
-        <div className='flex flex-col mx-auto relative z-40 '>
+        <div className='flex flex-col mx-auto relative z-40 pt-16 ' id='projects'>
             <h1 className='mx-auto my-auto text-center text-5xl justify-center font-light h-32'>
                 Projects
             </h1>
-            <div className='cards grid grid-cols-1 gap-6 mx-auto  sm:grid-cols-2 xl:grid-cols-3 '>
+            <div className='grid grid-cols-1 gap-6 mx-auto  sm:grid-cols-2 xl:grid-cols-3 '>
                 <Card className="mt-6 w-80 sm:w-64 md:w-64 lg:w-80 ">
                     <CardBody>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50" className=' my-5'>

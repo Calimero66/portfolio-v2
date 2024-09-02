@@ -7,6 +7,8 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
+
 
 
 
@@ -49,7 +51,9 @@ const Nav = () => {
         <>
             <div className="fixed w-28 ">
                 <div className='flex w-28'>
-                    <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-12 ml-6 " />
+                    <a href="#intro">
+                        <img src={logo} alt="Logo" className="fixed cursor-pointer w-24 mt-12 ml-6 " />
+                    </a>
                 </div>
 
                 <aside className="lg:flex lg:flex-col lg:flex-1 md:flex md:flex-col lg:items-center lg:justify-between md:items-center md:justify-center w-24 py-8 mx-[-8px] pl-2 sm:mx-6 h-screen hidden  ">
@@ -62,9 +66,9 @@ const Nav = () => {
                             <ul className='space-y-14 mx-auto pt-10' >
 
                                 {navLinks.map((link, index) => (
-                                    <React.Fragment key={index}>
+                                    <li key={index}>
                                         <NavLink link={link} />
-                                    </React.Fragment>
+                                    </li>
                                 ))}
                             </ul>
                         </nav>
@@ -147,7 +151,7 @@ function NavLink({ link }) {
     return (
         <li className="lg:-rotate-90 2xl:-rotate-90 xl:-rotate-90 md:-rotate-90 overflow-hidden">
             <a
-                href={link.pathname}
+                href={link.path}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className="relative mx-3"

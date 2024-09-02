@@ -13,38 +13,40 @@ const icon2 = {
 export const navLinks = [
     {
         label: 'Projects',
-        pathname: '/#project-1',
+        path: '#projects',
     },
     {
-        label: 'Details',
-        pathname: '/#details',
+        label: 'S k i l l s',
+        path: '#skills',
     },
     {
         label: 'Articles',
-        pathname: '/articles',
+        path: '/articles',
     },
     {
         label: 'Contact',
-        pathname: '/contact',
+        path: '/contact',
+        
     },
 ];
 
 export const navLinksMobile = [
     {
         label: 'Projects',
-        pathname: '/#project-1',
+        path: '#projects',
     },
     {
-        label: 'Details',
-        pathname: '/#details',
+        label: 'S k i l l s',
+        path: '#skills',
     },
     {
         label: 'Articles',
-        pathname: '/articles',
+        path: '/articles',
     },
     {
         label: 'Contact',
-        pathname: '/contact',
+        path: '/contact',
+        
     },
 ];
 
