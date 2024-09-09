@@ -18,7 +18,7 @@ const Intro = () => {
                         from-red-400 via-[#262626] to-[#a1a1aa] bg-clip-text tracking-tight text-transparent'>{aboutMe.aka}</span>
                     </p>
                     <GradualSpacing
-                        className="font-display text-4xl font-bold text-[##e5e7eb] tracking-tight  md:text-5xl md:leading-[4rem]"
+                        className="font-display text-4xl font-bold text-[##e5e7eb] tracking-tight  md:text-5xl md:leading-[4rem] -z-50"
                         text={aboutMe.title}
                     />
                     <p className='tracking-tight my-6 max-w-xl font-light'>

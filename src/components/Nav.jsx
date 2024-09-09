@@ -7,7 +7,6 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
 
 
 
@@ -98,7 +97,7 @@ const Nav = () => {
                         </div>
                     ) : (
                         <>
-                            <div className='absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center z-50'>
+                            <div className='absolute top-0 left-0 w-screen h-screen backdrop-blur-sm flex justify-center items-center z-[9000] '>
                                 <div onClick={handelClick} className='fixed right-[46px] top-[55px]'>
                                     <IoClose className="w-10 h-10 text-red-500 cursor-pointer rounded-full" />
                                 </div>
