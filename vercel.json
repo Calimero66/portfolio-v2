@@ -1,5 +1,5 @@
 {
     "rewrites": [
-        { "source": "/articles", "destination": "/src/Router.jsx" }
+        { "source": "/articles", "destination": "/src/components/articles.jsx" }
     ]
 }
