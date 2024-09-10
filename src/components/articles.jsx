@@ -22,12 +22,11 @@ const Articles = () => {
                     <IoMdArrowRoundBack className='text-3xl cursor-pointer ml-5' onClick={handleBackClick} />
                     <h1 className='text-2xl md:text-4xl xl:text-4xl mx-auto '>Never work for free</h1>
                 </div>
-                <div className='pt-36 font-medium text-lg max-w-4xl text-justify mx-6 leading-8'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti in quam placeat esse impedit similique corrupti quas libero illum, voluptatibus cum magnam itaque architecto reprehenderit repellat ad numquam, odio animi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti in quam placeat esse impedit similique corrupti quas libero illum, voluptatibus cum magnam itaque architecto reprehenderit repellat ad numquam, odio animi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti in quam placeat esse impedit similique corrupti quas libero illum, voluptatibus cum magnam itaque architecto reprehenderit repellat ad numquam, odio animi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti in quam placeat esse impedit similique corrupti quas libero illum, voluptatibus cum magnam itaque architecto reprehenderit repellat ad numquam, odio animi.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti in quam placeat esse impedit similique corrupti quas libero illum, voluptatibus cum magnam itaque architecto reprehenderit repellat ad numquam, odio animi.
+                {/* <div className='pt-36 font-medium text-lg max-w-4xl text-justify mx-6 leading-8'>
+                    
+                </div> */}
+                <div className='text-8xl justify-center text-center m-44'>
+                    Commig soon...
                 </div>
             </div>
         </div>
