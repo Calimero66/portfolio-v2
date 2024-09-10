@@ -54,17 +54,17 @@ export const navLinksMobile = [
 export const socialLinks = [
     {
         label: 'Twitter',
-        url: `https://twitter.com/`,
+        url: `https://x.com/Calim_dev`,
         icon: <FaXTwitter {...icon} />,
     },
     {
         label: 'LinkedIn',
-        url: `https://www.linkedin.com`,
+        url: `https://www.linkedin.com/in/hamza-aboulmaali-793b41273/`,
         icon: <FaLinkedin {...icon}  />,
     },
     {
         label: 'Github',
-        url: `https://github.com`,
+        url: `https://github.com/Calimero66`,
         icon: <FiGithub {...icon} />,
     },
 ];
@@ -72,17 +72,17 @@ export const socialLinks = [
 export const socialLinksMobile = [
     {
         label: 'Twitter',
-        url: `https://twitter.com/`,
+        url: `https://x.com/Calim_dev`,
         icon: <FaXTwitter {...icon2} />,
     },
     {
         label: 'LinkedIn',
-        url: `https://www.linkedin.com`,
+        url: `https://www.linkedin.com/in/hamza-aboulmaali-793b41273/`,
         icon: <FaLinkedin {...icon2}  />,
     },
     {
         label: 'Github',
-        url: `https://github.com`,
+        url: `https://github.com/Calimero66`,
         icon: <FiGithub {...icon2} />,
     },
 ];
