@@ -26,7 +26,7 @@ const Articles = () => {
                     
                 </div> */}
                 <div className='text-8xl justify-center text-center m-44'>
-                    Commig soon...
+                    coming soon...
                 </div>
             </div>
         </div>
