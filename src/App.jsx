@@ -1,11 +1,10 @@
 import React from 'react'
 import Nav from './components/Nav'
 import Intro from './components/intro'
-// import Details from './components/Details'
 import Home from './components/Skills'
 import Projects from './components/projects'
 import Footer from './components/footer'
-import Contact from './components/contact'
+
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
           <Intro />
           <Projects/>
           <Home/>
-          <Contact />
           <Footer />
 
         </div>

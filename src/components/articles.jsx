@@ -19,12 +19,9 @@ const Articles = () => {
             </div>
             <div className='flex flex-col items-center justify-start h-screen pt-16'>
                 <div className='flex items-center justify-between w-full px-5 sm:px-8 md:px-14 xl:px-14 py-2'>
-                    <IoMdArrowRoundBack className='text-3xl cursor-pointer ml-5' onClick={handleBackClick} />
+                    <IoMdArrowRoundBack className='text-3xl cursor-pointer ml-5 hover:text-red-600' onClick={handleBackClick} />
                     <h1 className='text-2xl md:text-4xl xl:text-4xl mx-auto '>Never work for free</h1>
                 </div>
-                {/* <div className='pt-36 font-medium text-lg max-w-4xl text-justify mx-6 leading-8'>
-                    
-                </div> */}
                 <div className='text-8xl justify-center text-center m-44'>
                     coming soon...
                 </div>

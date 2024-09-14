@@ -25,7 +25,7 @@ export const navLinks = [
     },
     {
         label: 'Contact',
-        path: '/#contact',
+        path: '/contact',
         
     },
 ];
