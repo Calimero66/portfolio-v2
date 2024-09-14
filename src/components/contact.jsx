@@ -8,27 +8,15 @@ import { useForm } from '@formspree/react';
 const Contact = () => {
     const navigate = useNavigate();
     const [state, handleSubmit] = useForm("mvgpnbaq");
-
-    console.log(state.errors);
-
-    useEffect(() => {
-        console.log(state.errors);
-    }, [state.errors]);
-
     if (state.succeeded) {
 
         console.log(state);
         return <p>Thanks for joining!</p>;
     }
 
-
-
-
     const handleBackClick = () => {
         navigate('/');
     };
-
-
 
     return (
         <div className='overflow-x-hidden text-[#d4d4d4] antialiased selection:bg-cyan-700 selection:text-cyan-300'>
@@ -43,7 +31,7 @@ const Contact = () => {
                     <h1 className='text-2xl md:text-4xl xl:text-4xl mx-auto'>Get in touch with me</h1>
                 </div>
             </div>
-            <div className="grid md:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl font-[sans-serif] mt-52">
+            <div className="grid md:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl font-[sans-serif] sm:mt-44">
                 <div className='mt-20'>
                     <h1 className="text-red-800 text-3xl font-extrabold">Let's Talk</h1>
                     <p className="text-sm mt-4">
@@ -102,7 +90,7 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-            <div className='w-full fixed bottom-0'>
+            <div className='w-full sm:fixed sm:bottom-0'>
                 <Footer />
             </div>
         </div>
